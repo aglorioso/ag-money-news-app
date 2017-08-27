@@ -2,6 +2,7 @@ import sys
 import io
 import csv
 from flask import Flask
+from flask import abort
 from flask import render_template
 
 #The next two lines help me get around encoding errors
@@ -30,6 +31,7 @@ def detail(row_id):
 	for row in object_list:
 		if row['index'] == row_id:
 			return render_template(template, object=row)
+	abort(404)
 
 if __name__ == '__main__':
 	#first up the Flask test server
