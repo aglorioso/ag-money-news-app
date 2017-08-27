@@ -1,38 +1,26 @@
 <!doctype html>
 <html lang="en">
-	<head></head>
-	<body>
-		<h1>Money Tracker: 2018 Florida race for Agriculture Commissioner</h1>
-		<table border=1 cellpadding=7>
-			<tr>
-				<th>Index</th>
-				<th>Receiving PAC</th>
-				<th>Date of Deposit</th>
-				<th>Amount of Deposit</th>
-				<th>Contributor</th>
-				<th>Contributions to Contributing PAC</th>
-				<th>Source Docs</th>
-				<th>Contribution Address</th>
-				<th>Contribution Latitude</th>
-				<th>Contribution Longitude</th>
+    <head></head>
+    <body>
+        <h1>Money Tracker: 2018 Florida race for Agriculture Commissioner</h1>
+        <table border=1 cellpadding=7>
+            <tr>
+                <th>Receiving PAC</th>
+                <th>Date of Deposit</th>
+                <th>Amount of Deposit</th>
+                <th>Contributor</th>
+                <th>Contribution Address</th>
 
-
-			</tr>
-			{% for obj in object_list %}
-			<tr>
-				<td>{{ obj.index }}</td>
-				<td>{{ obj.pac_name }}</td>
-				<td>{{ obj.date_of_deposit }}</td>
-				<td>{{ obj.amount }}</td>
-				<td>{{ obj.contributor }}</td>
-				<td>{{ obj.relevant_amounts }}</td>
-				<td>{{ obj.source_docs }}</td>
-				<td>{{ obj.address_full }}</td>
-				<td>{{ obj.lat }}</td>
-				<td>{{ obj.lng }}</td>
- 
-			</tr>
-			{% endfor %}
-		</table>
-	</body>
+            </tr>
+            {% for obj in object_list %}
+            <tr>
+                <td>{{ obj.pac_name }}</td>
+                <td><a href="{{ obj.index }}/">{{ obj.date_of_deposit }}</a></td>
+                <td>{{ obj.amount }}</td>
+                <td>{{ obj.contributor }}</td>
+                <td>{{ obj.address_full }}</td> 
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
 </html>
